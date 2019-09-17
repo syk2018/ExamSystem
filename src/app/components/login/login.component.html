@@ -2,15 +2,17 @@
     <main class="flex_center flex_column">
         <img src="../../../assets/logo.png">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-             <mat-form-field class="full-width">
-                 <input matInput required placeholder="学号:" type="tel" formControlName="number">
+             <mat-form-field appearance="legacy" class="full-width">
+                <mat-label>学号：</mat-label>
+                 <input matInput placeholder="输入学号..." type="tel" formControlName="number">
              </mat-form-field>
              
-             <mat-form-field class="full-width">
-                 <input matInput required placeholder="密码：" type="password" formControlName="password">
+             <mat-form-field appearance="legacy" class="full-width">
+                <mat-label>密码：</mat-label>
+                 <input matInput placeholder="输入密码..." type="password" formControlName="password">
              </mat-form-field>
              <a mat-button routerLink=".">立即注册</a>
-             <button mat-flat-button color="primary" type="submit" [disabled]="!loginForm.valid" class="full-width margin">登陆</button>
+             <button mat-flat-button color="primary" type="submit" [disabled]="isDisabled" class="full-width margin">登陆</button>
          </form> 
      </main>
 </div>
