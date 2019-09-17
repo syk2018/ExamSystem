@@ -1,9 +1,18 @@
 main {
-    width: 30%;
     background-color: white;
-    padding: 3em;
     border-radius: 30px;
     border-style: none;
+    padding: 1em;
+    margin: 1em;
+    @media screen and (min-width: 1024px) {
+        width: 30%;
+        padding: 3em;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 40%;
+        padding: 3em;
+    }
 }
 
 .container {
@@ -14,4 +23,10 @@ main {
      #177ABB 80%,
      white 0
      );
+}
+
+a {
+    color: #177ABB;
+    margin-bottom: 1em;
+    float: right;
 }
