@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
       } else {
         dialogRef.close();
         this.snack.showSnack('密码或学号错误！', 2000);
+        this.isDisabled = false;
       }
     }, 900);
   }
