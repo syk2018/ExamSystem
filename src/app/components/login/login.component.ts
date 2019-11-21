@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
     console.warn(this.loginForm.value);
     const dialogRef = this.dialog.open(LoadingComponent);
     setTimeout(() => {
-      console.log('ok');
       if(this.loginForm.controls.number.value == 12345678 
         && this.loginForm.controls.password.value == 12345678) {
           dialogRef.close();

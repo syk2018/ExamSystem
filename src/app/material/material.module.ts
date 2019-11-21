@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatButtonModule, MatCheckboxModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatToolbarModule, MatCardModule, MatIconModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -14,7 +14,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatDialogModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule
   ],
   exports: [
     MatButtonModule, 
@@ -23,6 +26,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatDialogModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule
   ]
 })
 export class MaterialModule { }
