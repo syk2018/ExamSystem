@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './components/loading/loading.component';
+import { ButtomSheetComponent } from './components/buttom-sheet/buttom-sheet.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +18,11 @@ import { LoadingComponent } from './components/loading/loading.component';
     HomeComponent,
     LoginComponent,
     LoadingComponent,
+    ButtomSheetComponent,
   ],
   entryComponents: [
-    LoadingComponent
+    LoadingComponent,
+    ButtomSheetComponent
   ],
   imports: [
     BrowserModule,
