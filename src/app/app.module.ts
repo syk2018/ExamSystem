@@ -11,6 +11,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './components/loading/loading.component';
 import { ButtomSheetComponent } from './components/buttom-sheet/buttom-sheet.component';
+import { QueryComponent } from './components/query/query.component';
+import { ExamingComponent } from './components/examing/examing.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ButtomSheetComponent } from './components/buttom-sheet/buttom-sheet.com
     LoginComponent,
     LoadingComponent,
     ButtomSheetComponent,
+    QueryComponent,
+    ExamingComponent,
   ],
   entryComponents: [
     LoadingComponent,

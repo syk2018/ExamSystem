@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material';
 import { ExamItem } from 'src/app/interfaces/exam-item';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buttom-sheet',
@@ -9,7 +10,8 @@ import { ExamItem } from 'src/app/interfaces/exam-item';
 })
 export class ButtomSheetComponent implements OnInit {
 
-  constructor(private bottomSheetRef: MatBottomSheetRef<ButtomSheetComponent>) { }
+  constructor(private bottomSheetRef: MatBottomSheetRef<ButtomSheetComponent>,
+    private router: Router,) { }
 
   ngOnInit() {
   }
@@ -31,7 +33,6 @@ export class ButtomSheetComponent implements OnInit {
   openLink(event: MouseEvent,id:number): void {
     this.bottomSheetRef.dismiss();
     event.preventDefault();
-    
-    console.log(id);
+    this.router.navigate(['/examing',id]);
   }
 }
