@@ -4,12 +4,12 @@
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
              <mat-form-field appearance="legacy" class="full-width">
                 <mat-label>学号：</mat-label>
-                 <input matInput placeholder="输入学号..." type="tel" formControlName="number">
+                 <input matInput placeholder="输入学号..." type="tel" formControlName="cardno">
              </mat-form-field>
              
              <mat-form-field appearance="legacy" class="full-width">
                 <mat-label>密码：</mat-label>
-                 <input matInput placeholder="输入密码..." type="password" formControlName="password">
+                 <input matInput placeholder="输入密码..." type="password" formControlName="pwd">
              </mat-form-field>
              <a mat-button routerLink=".">立即注册</a>
              <button mat-flat-button color="primary" type="submit" [disabled]="isDisabled" class="full-width margin">登陆</button>

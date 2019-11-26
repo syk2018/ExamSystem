@@ -11,6 +11,8 @@ export class HttpService {
 
   constructor(private http:HttpClient) { }
 
+  prefix:'localhost:8888';
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -25,6 +27,18 @@ export class HttpService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
+  }
+
+  public api = {
+    user_login:this.prefix + '/rep/users/login',
+    user_signUp:this.prefix + '/rep/users/signUp',
+    type_create:this.prefix + '/rep/Type/create',
+    type_getAll:this.prefix + '/rep/Type/getAll',
+    question_createChoice: this.prefix + '/rep/question/createChoice',
+    question_getExamByStudentId: this.prefix + '/rep/question/getExamById',
+    question_getQuestionByType: this.prefix + '/rep/question/getQuestionByType',
+    question_getResultById: this.prefix + '/rep/question/getResultById',
+    question_submit: this.prefix + '/rep/question/submit'
   }
 
   get(url:string , headers:HttpHeaders = null) {
