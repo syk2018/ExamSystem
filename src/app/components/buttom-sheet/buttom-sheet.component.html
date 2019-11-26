@@ -2,7 +2,7 @@
     <h3 matSubheader>选择考试科目：</h3>
 
     <mat-list-item *ngFor="let item of examItems;last as last" (click)="openLink($event, item.id)">
-        <span mat-line>{{item.name}}</span>
+        <span mat-line>{{item.type}}</span>
         <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
     </mat-list-item>
     

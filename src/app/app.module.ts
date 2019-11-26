@@ -13,6 +13,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { ButtomSheetComponent } from './components/buttom-sheet/buttom-sheet.component';
 import { QueryComponent } from './components/query/query.component';
 import { ExamingComponent } from './components/examing/examing.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ExamingComponent } from './components/examing/examing.component';
     ButtomSheetComponent,
     QueryComponent,
     ExamingComponent,
+    SignUpComponent,
   ],
   entryComponents: [
     LoadingComponent,

@@ -24,15 +24,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  /*user:Students = {
-    id:null,
-    name:'',
-    pwd:'',
-    sex:'',
-    jointime:null,
-    profession:'',
-    cardno:null
-  }*/
 
   loginForm = new FormGroup({
     cardno: new FormControl('', [  Validators.required, Validators.minLength(8) ]),
@@ -40,30 +31,34 @@ export class LoginComponent implements OnInit {
   })
 
   isDisabled = false;
+  
+  user:Students;
 
   onSubmit() {
     this.isDisabled = true;
     
     const dialogRef = this.dialog.open(LoadingComponent);
 
-    console.log(this.http.api.user_login);
-
-    this.http.post(this.http.api.user_login,this.loginForm.value).subscribe((result:CommonResult) => {
+    this.http.post(this.http.api.prefix + this.http.api.user_login,this.loginForm.value).subscribe((result:CommonResult) => {
       console.log(result);
-      dialogRef.close();
-    })
-    /*setTimeout(() => {
-      if(this.loginForm.controls.number.value == 12345678 
-        && this.loginForm.controls.password.value == 12345678) {
-          dialogRef.close();
-          this.router.navigateByUrl('/home');
-          this.snack.showSnack('成功！', 2000);
-      } else {
-        dialogRef.close();
+      if(result.code == 404) {
         this.snack.showSnack('密码或学号错误！', 2000);
         this.isDisabled = false;
+      } else if(result.code == 200 && result.data!= null) {
+        this.router.navigateByUrl('/home');
+        this.snack.showSnack('欢迎回来，' + result.data[0].name, 2000);
+        this.user = result.data[0];
+
+        localStorage.removeItem('user');
+        localStorage.setItem('user',JSON.stringify(this.user));
+
+      } else {
+        this.snack.showSnack('发生了未知错误！', 2000);
+        this.isDisabled = false;
       }
-    }, 900);*/
+      dialogRef.close();
+    })
+    
   }
 
 }

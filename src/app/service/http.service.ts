@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { CommonResult } from '../interfaces/common-result';
 import { Observable, throwError } from 'rxjs';
@@ -9,9 +9,9 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class HttpService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+  }
 
-  prefix:'localhost:8888';
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -30,15 +30,16 @@ export class HttpService {
   }
 
   public api = {
-    user_login:this.prefix + '/rep/users/login',
-    user_signUp:this.prefix + '/rep/users/signUp',
-    type_create:this.prefix + '/rep/Type/create',
-    type_getAll:this.prefix + '/rep/Type/getAll',
-    question_createChoice: this.prefix + '/rep/question/createChoice',
-    question_getExamByStudentId: this.prefix + '/rep/question/getExamById',
-    question_getQuestionByType: this.prefix + '/rep/question/getQuestionByType',
-    question_getResultById: this.prefix + '/rep/question/getResultById',
-    question_submit: this.prefix + '/rep/question/submit'
+    prefix: 'http://localhost:8888',
+    user_login:'/rep/users/login',
+    user_signUp:'/rep/users/signUp',
+    type_create:'/rep/Type/create',
+    type_getAll:'/rep/Type/getAll',
+    question_createChoice:'/rep/question/createChoice',
+    question_getExamByStudentId:'/rep/question/getExamById',
+    question_getQuestionByType: '/rep/question/getQuestionByType',
+    question_getResultById: '/rep/question/getResultById',
+    question_submit: '/rep/question/submit'
   }
 
   get(url:string , headers:HttpHeaders = null) {

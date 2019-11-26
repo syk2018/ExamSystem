@@ -1,0 +1,32 @@
+main {
+    background-color: white;
+    border-radius: 30px;
+    border-style: none;
+    padding: 1em;
+    margin: 1em;
+    @media screen and (min-width: 1024px) {
+        width: 30%;
+        padding: 3em;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 40%;
+        padding: 3em;
+    }
+}
+
+.container {
+    background: linear-gradient(
+     145deg,
+     #0E4174 40%,
+     #177ABB 0,
+     #177ABB 80%,
+     white 0
+     );
+}
+
+a {
+    color: #177ABB;
+    margin-bottom: 1em;
+    float: right;
+}

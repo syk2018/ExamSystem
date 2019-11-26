@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material';
 import { ExamItem } from 'src/app/interfaces/exam-item';
 import { Router } from '@angular/router';
+import { HttpService } from 'src/app/service/http.service';
+import { Type } from '@angular/compiler';
+import { CommonResult } from 'src/app/interfaces/common-result';
 
 @Component({
   selector: 'app-buttom-sheet',
@@ -11,25 +14,17 @@ import { Router } from '@angular/router';
 export class ButtomSheetComponent implements OnInit {
 
   constructor(private bottomSheetRef: MatBottomSheetRef<ButtomSheetComponent>,
-    private router: Router,) { }
+    private router: Router,
+    private http:HttpService) { }
 
   ngOnInit() {
+    this.http.get(this.http.api.prefix + this.http.api.type_getAll).subscribe((result:CommonResult) => {
+      this.examItems = result.data;
+    })
   }
 
-  examItems:ExamItem[] = [
-    {
-      id:1,
-      name:'Java'
-    },
-    {
-      id:2,
-      name:'C'
-    },
-    {
-      id:3,
-      name:'Python'
-    }
-  ];
+  examItems:Type[];
+
   openLink(event: MouseEvent,id:number): void {
     this.bottomSheetRef.dismiss();
     event.preventDefault();
