@@ -6,13 +6,20 @@
 
 <div class="container">
     <div class="title">试卷题目</div>
-
-    <mat-list>
-        
-    <mat-list-item>
-        <h4 matLine>标题1</h4>
-        <p>具体内容</p>
-    </mat-list-item>
-        
-    </mat-list>
+    <div class="session">一、选择题</div>
+  
+    <mat-card *ngFor="let item of questions.questionsChoices; let i=index">
+    <div class="decription">
+        {{i+1}}.{{item.question}}
+    </div>
+        <mat-radio-group class="radio-group">
+            <mat-radio-button value="A" class="radio-button">{{item.optiona}}</mat-radio-button>
+            <mat-radio-button value="B" class="radio-button">{{item.optionb}}</mat-radio-button>
+            <mat-radio-button value="C" class="radio-button">{{item.optionc}}</mat-radio-button>
+            <mat-radio-button value="D" class="radio-button">{{item.optiond}}</mat-radio-button>
+        </mat-radio-group>
+    </mat-card>
+    
 </div>
+    
+    
