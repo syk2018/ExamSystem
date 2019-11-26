@@ -3,8 +3,9 @@ import { MatBottomSheetRef } from '@angular/material';
 import { ExamItem } from 'src/app/interfaces/exam-item';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/service/http.service';
-import { Type } from '@angular/compiler';
+
 import { CommonResult } from 'src/app/interfaces/common-result';
+import { Type } from 'src/app/interfaces/type';
 
 @Component({
   selector: 'app-buttom-sheet',

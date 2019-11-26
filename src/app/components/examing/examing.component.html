@@ -2,6 +2,11 @@
     <button mat-icon-button (click)='back()'>
         <mat-icon>arrow_back</mat-icon>
     </button>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)='submit()'>
+        <mat-icon>done</mat-icon>
+    </button>
+        
 </mat-toolbar>
 
 <div class="container">
@@ -12,11 +17,11 @@
     <div class="decription">
         {{i+1}}.{{item.question}}
     </div>
-        <mat-radio-group class="radio-group">
-            <mat-radio-button value="A" class="radio-button">{{item.optiona}}</mat-radio-button>
-            <mat-radio-button value="B" class="radio-button">{{item.optionb}}</mat-radio-button>
-            <mat-radio-button value="C" class="radio-button">{{item.optionc}}</mat-radio-button>
-            <mat-radio-button value="D" class="radio-button">{{item.optiond}}</mat-radio-button>
+        <mat-radio-group class="radio-group" [(ngModel)]="results[i].answer">
+            <mat-radio-button value="A" class="radio-button">{{item.optionA}}</mat-radio-button>
+            <mat-radio-button value="B" class="radio-button">{{item.optionB}}</mat-radio-button>
+            <mat-radio-button value="C" class="radio-button">{{item.optionC}}</mat-radio-button>
+            <mat-radio-button value="D" class="radio-button">{{item.optionD}}</mat-radio-button>
         </mat-radio-group>
     </mat-card>
     

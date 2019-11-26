@@ -30,16 +30,17 @@ export class HttpService {
   }
 
   public api = {
-    prefix: 'http://localhost:8888',
-    user_login:'/rep/users/login',
-    user_signUp:'/rep/users/signUp',
-    type_create:'/rep/Type/create',
-    type_getAll:'/rep/Type/getAll',
-    question_createChoice:'/rep/question/createChoice',
-    question_getExamByStudentId:'/rep/question/getExamById',
-    question_getQuestionByType: '/rep/question/getQuestionByType',
-    question_getResultById: '/rep/question/getResultById',
-    question_submit: '/rep/question/submit'
+    prefix: 'https://syk2018.cn',
+    user_login:'/web/rep/users/login',
+    user_signUp:'/web/rep/users/signUp',
+    type_create:'/web/rep/Type/create',
+    type_getAll:'/web/rep/Type/getAll',
+    question_createChoice:'/web/rep/question/createChoice',
+    question_getExamByStudentId:'/web/rep/question/getExamById',
+    question_getQuestionByType: '/web/rep/question/getQuestionByType',
+    question_getResultById: '/web/rep/question/getResultById',
+    question_submit: '/web/rep/question/submit',
+    question_getChoiceById:'/web/rep/question/getChoiceById'
   }
 
   get(url:string , headers:HttpHeaders = null) {

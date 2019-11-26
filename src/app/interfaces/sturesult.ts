@@ -1,9 +1,9 @@
 export interface Sturesult {
     id:number,
-    stuId:number,
+    stuid:number,
     examtime:Date,
-    examId:number,
-    quesId:number,
+    examid:number,
+    questionid:number,
     answer:string,
     restotal:number
 }

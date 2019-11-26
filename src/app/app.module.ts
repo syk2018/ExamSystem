@@ -14,6 +14,10 @@ import { ButtomSheetComponent } from './components/buttom-sheet/buttom-sheet.com
 import { QueryComponent } from './components/query/query.component';
 import { ExamingComponent } from './components/examing/examing.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ResultComponent } from './components/result/result.component';
+import {NgxEchartsModule} from 'ngx-echarts';
+import { DetailsComponent } from './components/details/details.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     QueryComponent,
     ExamingComponent,
     SignUpComponent,
+    ResultComponent,
+    DetailsComponent,
   ],
   entryComponents: [
     LoadingComponent,
@@ -37,9 +43,14 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     HttpClientModule,
     AppRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    NgxEchartsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LocationStrategy, useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

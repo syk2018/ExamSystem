@@ -6,6 +6,6 @@ export interface QuestionChoice {
     optionB:string,
     optionC:string,
     optionD:string,
-    anster:string,
+    answer:string,
     note:string
 }

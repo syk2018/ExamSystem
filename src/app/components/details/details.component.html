@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)='back()'>
+        <mat-icon>arrow_back</mat-icon>
+    </button>      
+    <span>考试详情</span>
+</mat-toolbar>
+
+<div class="container">
+    <div class="title">试卷题目</div>
+    <div class="session">一、选择题</div>
+  
+    <mat-card *ngFor="let item of choices; let i=index">
+    <div class="decription">
+        {{i+1}}.{{item.question}}
+    </div>
+        <mat-radio-group class="radio-group" [(ngModel)]="item.answer">
+            <mat-radio-button disabled="true" value="A" class="radio-button">{{item.optionA}}</mat-radio-button>
+            <mat-radio-button disabled="true" value="B" class="radio-button">{{item.optionB}}</mat-radio-button>
+            <mat-radio-button disabled="true" value="C" class="radio-button">{{item.optionC}}</mat-radio-button>
+            <mat-radio-button disabled="true" value="D" class="radio-button">{{item.optionD}}</mat-radio-button>
+        </mat-radio-group>
+        <div>正确答案：{{item.answer}} 我的答案：{{result[i].answer}}</div>
+    </mat-card>
+    
+</div>

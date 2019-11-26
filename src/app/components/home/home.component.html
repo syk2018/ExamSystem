@@ -1,14 +1,20 @@
 <mat-toolbar color="primary">
     <span>Kupa Exam System</span>
+    <span class="example-spacer"></span>
+    <span class="user_name">{{user.name}}</span>
+    <button mat-icon-button (click)="exit()">
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
 </mat-toolbar>
 
-<div class="container flex flex_row">
+<div class="flex flex_row">
     <mat-card class="flxe_center flex_column" (click)='openBottomSheet()'>
         <mat-icon>add</mat-icon>
         <div>参加考试</div>
     </mat-card>
-    <mat-card class="flxe_center flex_column">
+    <mat-card class="flxe_center flex_column" routerLink='/query'>
         <mat-icon>find_replace</mat-icon>
         <div>查询成绩</div>
     </mat-card>
 </div>
+
