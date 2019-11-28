@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     const dialogRef = this.dialog.open(LoadingComponent);
 
     this.http.post(this.http.api.prefix + this.http.api.user_login,this.loginForm.value).subscribe((result:CommonResult) => {
-      console.log(result);
+      
       if(result.code == 404) {
         this.snack.showSnack('密码或学号错误！', 2000);
         this.isDisabled = false;

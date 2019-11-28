@@ -23,7 +23,9 @@ export class QueryComponent implements OnInit {
     this.profile = JSON.parse(localStorage.getItem('user'));
     this.http.get(this.http.api.prefix + this.http.api.question_getExamByStudentId + '?stuId=' + this.profile.id).subscribe((result:CommonResult) => {
       if(result.data!= null) {
+        
         this.exam = result.data;
+        
         dialogRef.close();
       }
     })

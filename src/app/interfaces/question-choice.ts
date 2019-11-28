@@ -2,10 +2,10 @@ export interface QuestionChoice {
     id:number,
     typeId:number,
     question:string,
-    optionA:string,
-    optionB:string,
-    optionC:string,
-    optionD:string,
+    optiona:string,
+    optionb:string,
+    optionc:string,
+    optiond:string,
     answer:string,
     note:string
 }

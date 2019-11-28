@@ -24,7 +24,7 @@ export class ExamingComponent implements OnInit {
   ngOnInit() {
     this.stuId = JSON.parse(localStorage.getItem('user')).id;
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
-    this.http.get(this.http.api.prefix + this.http.api.question_getQuestionByType + '?typeId=' + this.id +'&stuId=' + this.stuId + '&num=3')
+    this.http.get(this.http.api.prefix + this.http.api.question_getQuestionByType + '?typeId=' + this.id +'&stuId=' + this.stuId + '&num=8')
     .subscribe( (result:CommonResult) => {
       
       this.questions = result.data;

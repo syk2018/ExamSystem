@@ -1,5 +1,5 @@
 export interface Exam {
     id:number,
-    time:Date,
+    examtime:Date,
     stuId:number
 }
